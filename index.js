@@ -14,7 +14,7 @@ app.use('/', router)
 
 mongoose.connect(process.env.DATABASE_CONNECTION, {
 	useNewUrlParser: true,
-	useUnifiedTopology: true,
+	useUnifiedTopology: true
 })
 .then(async () => console.log('Successful connection!'))
 .catch(err => console.log('Connection error!', err))
