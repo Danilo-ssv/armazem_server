@@ -4,6 +4,26 @@
         {
             "src": "./index.js",
             "use": "@vercel/node"
+        },
+        {
+            "src": "./routes/router.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "./models/productsModel.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "./models/usersModel.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "./controllers/authController.js",
+            "use": "@vercel/node"
+        },
+        {
+            "src": "./controllers/productsController.js",
+            "use": "@vercel/node"
         }
     ],
     "routes": [

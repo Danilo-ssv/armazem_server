@@ -11,6 +11,9 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/', router)
+app.get('/', (req, res)=>{
+	res.send('Hello World!')
+})
 
 mongoose.connect(process.env.DATABASE_CONNECTION, {
 	useNewUrlParser: true,
