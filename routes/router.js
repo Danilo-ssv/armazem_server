@@ -4,14 +4,14 @@ const {
 	login,
 	updateAccount,
 	authorization,
-} = require('../controllers/authController.js')
+} = require('../controllers/auth_controller.js')
 const {
 	getProducts,
 	editProduct,
 	deleteProduct,
 	newProduct,
 	searchProduct,
-} = require('../controllers/productsController.js')
+} = require('../controllers/products_controller.js')
 
 router.post('/new_product', authorization, newProduct)
 router.put('/edit_product', authorization, editProduct)
