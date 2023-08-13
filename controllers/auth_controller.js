@@ -41,14 +41,15 @@ const authController = {
 	authorization: (req, res, next)=>{
 
 		const token = req.headers.authorization
-		if(token) {
+		if(token != undefined){
 			const data = jwt.verify(token, process.env.SECRET, (err, user)=>{
-				if(err) return res.send('INVALID_TOKEN')
+				if(err) return res.json({invalidToken: true})
 	
 				next()
 			})
 		}
-		return res.sendStatus(500)
+
+		return res.json({invalidToken: true})
 	},
 }
 
