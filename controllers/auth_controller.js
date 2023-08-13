@@ -45,7 +45,7 @@ const authController = {
 			const data = jwt.verify(token, process.env.SECRET, (err, user)=>{
 				if(err) return res.json({invalidToken: true})
 	
-				next()
+				return next()
 			})
 		}
 
