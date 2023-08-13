@@ -11,7 +11,9 @@ app.use(express.json())
 app.use(cors())
 
 app.use((req, res, next)=>{
-	res.header('Access-Control-Allow-Origin', '*')
+	res.header('Access-Control-Allow-Origin',
+	'https://armazem-client.vercel.app')
+
 	next()
 })
 app.use('/', router)
