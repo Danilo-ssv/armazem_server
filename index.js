@@ -8,14 +8,11 @@ const app = express()
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+	origin: 'https://armazem-client.vercel.app/',
+}))
 
-app.use('/', (req, res, next)=>{
-	res.header('Access-Control-Allow-Origin',
-	'https://armazem-client.vercel.app')
-
-	next()
-}, router)
+app.use('/', router)
 
 mongoose.connect(process.env.DATABASE_CONNECTION, {
 	useNewUrlParser: true,
